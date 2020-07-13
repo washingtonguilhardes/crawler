@@ -33,3 +33,5 @@ ou
 ```
 npm run test
 ```
+Se você estiver usando o VS Code, você pode usar a ferramenta de debug dele. As configurações foram submetidas junto com o projeto
+
