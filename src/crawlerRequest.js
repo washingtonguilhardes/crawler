@@ -7,7 +7,7 @@ const fetch = require('node-fetch');
  * @returns {Promise<string>}
  */
 async function fetchProductsHTML(text){
-    if(!text.trim()){
+    if(!(text||'').trim()){
         return ''
     }
 

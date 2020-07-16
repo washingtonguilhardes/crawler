@@ -51,7 +51,7 @@ function toObject(item) {
  * @param {String} text
  * @returns {Promise<Array<{name:string, link: string, price: number, store: string, state: String }>>}
  */
-async function search(text, limit) {
+async function search(text = '', limit) {
     if (!text.trim()) {
         return []
     }

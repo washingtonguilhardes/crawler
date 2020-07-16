@@ -1,4 +1,3 @@
-jest.mock('./../__mocks__/crawlerRequest.js');
 jest.mock('node-fetch');
 
 const fs = require('fs');
@@ -16,6 +15,11 @@ describe('[Crawler]', ()=>{
         fetch.mockReturnValue(Promise.resolve(new Response(template)));
          const result = await fetchProductsHTML('cadeado');
          expect(result).toBe(template);
+    })
+    it('[Testando a função que busca os dados sem parametros]', async ()=>{
+        fetch.mockReturnValue(Promise.resolve(new Response(template)));
+         const result = await fetchProductsHTML();
+         expect(result).toBe('');
     })
     it('[Testando a função que extrai os dados]', ()=>{
         const itemTemplate =  fs.readFileSync(path.join(__dirname, 'itemTemplate.html')).toString();
@@ -43,6 +47,12 @@ describe('[Crawler]', ()=>{
 
     })
     
+    it('[Testando a busca sem parametros]', async () => {
+            fetch.mockReturnValue(Promise.resolve(new Response(template)));
+        
+            const result = await search();
+            expect(result).toHaveLength(0);
+        });
     it('[Testando a busca sem limites]', async () => {
             fetch.mockReturnValue(Promise.resolve(new Response(template)));
         
