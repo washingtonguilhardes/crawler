@@ -35,7 +35,18 @@ ou
 ```
 npm run test
 ```
-Se você estiver usando o VS Code, você pode usar a ferramenta de debug dele. As configurações foram submetidas junto com o projeto.
+Se você estiver usando o VS Code, você pode usar a ferramenta de debug dele. 
+As configurações foram submetidas junto com o projeto.
+
+## Docker
+
+Para rodar o projeto usando o docker, basta usar o docker-compose na pasta raiz do projeto.
+
+```
+docker-compose up
+```
+
+## Buscar produtos
 
 Endpoint usado para buscar os produtos:
 
@@ -44,6 +55,7 @@ Endpoint usado para buscar os produtos:
 ```
 http://localhost:3000/products/search
 ```
+
 Exemplo do body
 
 ```json
@@ -54,3 +66,4 @@ Exemplo do body
 }
 
 ```
+
